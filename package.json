@@ -1,12 +1,13 @@
 {
-  "name": "front-end-lab2",
+  "name": "front-end-lab5",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --mode none",
-    "dev-start": "webpack serve --mode none"
+    "dev-start": "webpack serve --mode none",
+    "watch:scss": "node-sass -w scss/index.scss scss/index.css"
   },
   "keywords": [],
   "author": "",
@@ -19,6 +20,8 @@
     "webpack-dev-server": "^5.0.2"
   },
   "dependencies": {
-    "html-webpack-plugin": "^5.6.0"
+    "html-webpack-plugin": "^5.6.0",
+    "node-sass": "^9.0.0",
+    "normalize.css": "^8.0.1"
   }
 }
