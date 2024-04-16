@@ -2,6 +2,8 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const CopyPlugin = require("copy-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+
 module.exports = {
   entry: {
     main: path.resolve(__dirname, "./src/index.js"),
@@ -9,6 +11,14 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, "./dist"),
     filename: "[name].bundle.js",
+  },
+  module: {
+    rules: [
+      {
+        test: /\.scss$/,
+        use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"],
+      },
+    ],
   },
   plugins: [
     new HtmlWebpackPlugin({
@@ -107,7 +117,7 @@ module.exports = {
         },
       ],
     }),
-    // new CleanWebpackPlugin(),
+    new CleanWebpackPlugin(),
   ],
   devServer: {
     static: "./dist/pages",
