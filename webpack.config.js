@@ -117,7 +117,7 @@ module.exports = {
         },
       ],
     }),
-    new MiniCssExtractPlugin({ filename: "index.css" }),
+    new MiniCssExtractPlugin({ filename: "[name].css" }),
     //new CleanWebpackPlugin(),
   ],
   module: {
