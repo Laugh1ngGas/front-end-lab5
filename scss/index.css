@@ -1,4 +1,4 @@
-@import url(normalize.css);
+@import "./normalize.css";
 body {
   background: linear-gradient(to bottom, #E6E617, #9A9A3D, #7B7B04, #F6F662, #F6F69C);
   width: 90%;

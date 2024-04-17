@@ -117,8 +117,17 @@ module.exports = {
         },
       ],
     }),
+    new MiniCssExtractPlugin({ filename: "[name].css" }),
     new CleanWebpackPlugin(),
   ],
+  module: {
+    rules: [
+      {
+        test: /\.scss$/,
+        use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"],
+      },
+    ],
+  },
   devServer: {
     static: "./dist/pages",
     port: 8000,
